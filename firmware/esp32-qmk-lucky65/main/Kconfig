@@ -1,0 +1,15 @@
+menu "LCD-SETUP"
+ 
+    config S3_LCD_DATA_WIDTH
+        int "Bit - Data Bus Width 8 or 16"
+        default 8
+
+    config S3_LCD_DATA_FREQ_MHZ
+        int "Mhz - Data Bus Freq"
+        default 20
+
+    config S3_LCD_USE_TE
+        bool "Use TE"
+        default n
+
+endmenu
