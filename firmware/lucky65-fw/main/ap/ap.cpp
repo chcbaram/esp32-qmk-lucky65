@@ -24,17 +24,20 @@ void apInit(void)
 void apMain(void)
 {
   uint32_t pre_time;
-  uint8_t index = 0;
+  bool is_led_on = true;
+
+
+  ledOn(_DEF_LED1);
 
   pre_time = millis();
   while(1)
   {
-    if (millis()-pre_time >= 1000)
+    if (is_led_on && millis()-pre_time >= 500)
     {
-      pre_time = millis();
-      index++;
+      is_led_on = false;
+      ledOff(_DEF_LED1);
     }
-    delay(1000);
+    delay(100);
   }
 }
 
