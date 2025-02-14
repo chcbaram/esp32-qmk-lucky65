@@ -28,11 +28,11 @@ static tinyusb_config_cdcacm_t acm_cfg = {
 bool cdcInit(void)
 {
   bool ret;
-  esp_err_t esp_ret;
+  esp_err_t esp_ret = ESP_OK;
 
   qbufferCreate(&rx_q, rx_q_buf, 1024);
 
-  esp_ret = tusb_cdc_acm_init(&acm_cfg);
+  // esp_ret = tusb_cdc_acm_init(&acm_cfg);
   is_init = esp_ret == ESP_OK;
 
   logPrintf("[%s] cdcInit()\n", is_init ? "OK":"E_");   

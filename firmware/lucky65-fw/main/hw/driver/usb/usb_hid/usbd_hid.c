@@ -30,7 +30,7 @@ enum
 {
   ITF_ID_KEYBOARD = 0,
   ITF_ID_VIA,
-  ITF_ID_CDC,
+  // ITF_ID_CDC,
   ITF_ID_COUNT
 };
 
@@ -41,7 +41,8 @@ enum
   REPORT_ID_COUNT
 };
 
-#define TUSB_DESC_TOTAL_LEN      (TUD_CONFIG_DESC_LEN + TUD_HID_DESC_LEN + TUD_HID_INOUT_DESC_LEN + TUD_CDC_DESC_LEN)
+// #define TUSB_DESC_TOTAL_LEN      (TUD_CONFIG_DESC_LEN + TUD_HID_DESC_LEN + TUD_HID_INOUT_DESC_LEN + TUD_CDC_DESC_LEN)
+#define TUSB_DESC_TOTAL_LEN      (TUD_CONFIG_DESC_LEN + TUD_HID_DESC_LEN + TUD_HID_INOUT_DESC_LEN)
 #define HID_KEYBOARD_REPORT_SIZE (HW_KEYS_PRESS_MAX + 2U)
 
 typedef struct
@@ -148,13 +149,13 @@ static const uint8_t hid_configuration_descriptor[] = {
                            ),
 
   // Interface number, string index, EP notification address and size, EP data address (out, in) and size.
-  TUD_CDC_DESCRIPTOR(ITF_ID_CDC,
-                     5,
-                     HID_CDC_NOTIF,
-                     8,
-                     HID_CDC_OUT,
-                     HID_CDC_IN,
-                     64),
+  // TUD_CDC_DESCRIPTOR(ITF_ID_CDC,
+  //                    5,
+  //                    HID_CDC_NOTIF,
+  //                    8,
+  //                    HID_CDC_OUT,
+  //                    HID_CDC_IN,
+  //                    64),
 
 };
 
